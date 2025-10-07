@@ -15,4 +15,4 @@ class SouthDictionary(BaseDictionary):
         return "lẻ"
 
     def special_triplet_unit_four(self) -> str:
-        return "bốn"
+        return "tư"

@@ -55,7 +55,7 @@ class Dictionary(DictionaryInterface):
         return "mốt"
 
     def special_triplet_unit_four(self) -> str:
-        return "tư"
+        return "bốn"
 
     def special_triplet_unit_five(self) -> str:
         return "lăm"
