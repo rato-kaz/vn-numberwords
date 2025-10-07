@@ -2,7 +2,6 @@ from vn_numberwords import (
     number_to_words,
     number_to_currency,
     vietnamese_string_to_words,
-    Dictionary,
     SouthDictionary,
 )
 
