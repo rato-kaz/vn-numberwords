@@ -1,4 +1,4 @@
-from typing import Union, List, Tuple
+from typing import Union, List, Tuple, Optional
 
 from .interfaces import DictionaryInterface
 from ..dictionaries.base import Dictionary
@@ -7,7 +7,11 @@ from ..dictionaries.base import Dictionary
 class NumberTransformer:
     """Main class for converting numbers to Vietnamese words"""
 
-    def __init__(self, dictionary: DictionaryInterface = None, decimal_part: int = None):
+    def __init__(
+        self,
+        dictionary: Optional[DictionaryInterface] = None,
+        decimal_part: Optional[int] = None,
+    ):
         self.dictionary = dictionary or Dictionary()
         self.decimal_part = decimal_part
 
@@ -17,7 +21,10 @@ class NumberTransformer:
         return separator.join(words)
 
     def resolve_number(self, number: Union[int, float, str]) -> Tuple[bool, int, int]:
-        if not isinstance(number, (int, float, str)) or not str(number).replace("-", "").replace(".", "").isdigit():
+        if (
+            not isinstance(number, (int, float, str))
+            or not str(number).replace("-", "").replace(".", "").isdigit()
+        ):
             raise ValueError(f"Number arg ({number}) must be numeric!")
 
         if self.decimal_part is None:
@@ -77,7 +84,7 @@ class NumberTransformer:
         return self.collapse_words(words)
 
     def number_to_triplets(self, number: int) -> List[int]:
-        triplets = []
+        triplets: List[int] = []
 
         while number > 0:
             triplets.insert(0, number % 1000)
@@ -100,9 +107,7 @@ class NumberTransformer:
         for pos, triplet in enumerate(triplets):
             if triplet > 0:
                 words.append(
-                    self.triplet_to_words(
-                        triplet, pos == 0, len(triplets) - pos - 1
-                    )
+                    self.triplet_to_words(triplet, pos == 0, len(triplets) - pos - 1)
                 )
 
         if decimal_part > 0:
@@ -111,7 +116,9 @@ class NumberTransformer:
 
         return self.collapse_words(words)
 
-    def to_currency(self, number: Union[int, float, str], unit: Union[str, List[str]] = "đồng") -> str:
+    def to_currency(
+        self, number: Union[int, float, str], unit: Union[str, List[str]] = "đồng"
+    ) -> str:
         if isinstance(unit, str):
             unit = [unit]
 
@@ -130,5 +137,3 @@ class NumberTransformer:
             words.append(decimal_unit)
 
         return self.collapse_words(words)
-
-

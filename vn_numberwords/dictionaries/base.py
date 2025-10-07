@@ -80,9 +80,5 @@ class Dictionary(DictionaryInterface):
 
     def get_exponent(self, power: int) -> str:
         if not (0 <= power < len(self.EXPONENTS)):
-            raise ValueError(
-                f"Power arg ({power}) not exist in vietnamese dictionary!"
-            )
+            raise ValueError(f"Power arg ({power}) not exist in vietnamese dictionary!")
         return self.EXPONENTS[power]
-
-

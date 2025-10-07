@@ -16,5 +16,3 @@ class SouthDictionary(BaseDictionary):
 
     def special_triplet_unit_four(self) -> str:
         return "bốn"
-
-

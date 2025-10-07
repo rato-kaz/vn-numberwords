@@ -10,5 +10,3 @@ __all__ = [
     "parse_vietnamese_number",
     "format_number_with_dots",
 ]
-
-

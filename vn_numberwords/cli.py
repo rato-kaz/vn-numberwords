@@ -1,5 +1,7 @@
 import argparse
+from typing import Optional
 from . import number_to_words, number_to_currency, SouthDictionary
+from .core.interfaces import DictionaryInterface
 
 
 def main() -> None:
@@ -9,7 +11,9 @@ def main() -> None:
     parser.add_argument("--south", action="store_true", help="Use Southern dictionary")
     args = parser.parse_args()
 
-    dictionary = SouthDictionary() if args.south else None
+    dictionary: Optional[DictionaryInterface] = (
+        SouthDictionary() if args.south else None
+    )
 
     if args.currency:
         print(number_to_currency(args.number, args.currency, dictionary))
@@ -19,5 +23,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-
-

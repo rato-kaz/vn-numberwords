@@ -17,19 +17,13 @@ def test_number_to_words_south():
 
 
 def test_currency_and_parse():
-    assert number_to_currency(1234, "đồng") == "một nghìn hai trăm linh bốn đồng"
-    assert (
-        vietnamese_string_to_words("1.234")
-        == "một nghìn hai trăm ba mươi tư"
-    )
+    assert number_to_currency(1234, "đồng") == "một nghìn hai trăm ba mươi tư đồng"
+    assert vietnamese_string_to_words("1.234") == "một nghìn hai trăm ba mươi tư"
 
 
 def test_plain_integer_input():
     # Integer without dots
-    assert (
-        number_to_words(123123)
-        == "một trăm hai mươi ba nghìn một trăm hai mươi ba"
-    )
+    assert number_to_words(123123) == "một trăm hai mươi ba nghìn một trăm hai mươi ba"
 
 
 def test_plain_string_input():
@@ -38,4 +32,3 @@ def test_plain_string_input():
         vietnamese_string_to_words("123123")
         == "một trăm hai mươi ba nghìn một trăm hai mươi ba"
     )
-

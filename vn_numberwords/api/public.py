@@ -1,31 +1,37 @@
-from typing import Union, List
+from typing import Union, List, Optional
 
 from ..core.interfaces import DictionaryInterface
 from ..core.transformer import NumberTransformer
 from ..core.utils import parse_vietnamese_number
 
 
-def number_to_words(number: Union[int, float, str], dictionary: DictionaryInterface = None) -> str:
+def number_to_words(
+    number: Union[int, float, str], dictionary: Optional[DictionaryInterface] = None
+) -> str:
     transformer = NumberTransformer(dictionary)
     return transformer.to_words(number)
 
 
 def number_to_currency(
-    number: Union[int, float, str], unit: Union[str, List[str]] = "đồng", dictionary: DictionaryInterface = None
+    number: Union[int, float, str],
+    unit: Union[str, List[str]] = "đồng",
+    dictionary: Optional[DictionaryInterface] = None,
 ) -> str:
     transformer = NumberTransformer(dictionary)
     return transformer.to_currency(number, unit)
 
 
-def vietnamese_string_to_words(number_str: str, dictionary: DictionaryInterface = None) -> str:
+def vietnamese_string_to_words(
+    number_str: str, dictionary: Optional[DictionaryInterface] = None
+) -> str:
     number = parse_vietnamese_number(number_str)
     return number_to_words(number, dictionary)
 
 
 def vietnamese_string_to_currency(
-    number_str: str, unit: Union[str, List[str]] = "đồng", dictionary: DictionaryInterface = None
+    number_str: str,
+    unit: Union[str, List[str]] = "đồng",
+    dictionary: Optional[DictionaryInterface] = None,
 ) -> str:
     number = parse_vietnamese_number(number_str)
     return number_to_currency(number, unit, dictionary)
-
-

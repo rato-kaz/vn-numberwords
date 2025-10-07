@@ -7,7 +7,12 @@ from .core import (
     format_number_with_dots,
 )
 from .dictionaries import Dictionary, SouthDictionary
-from .api import number_to_words, number_to_currency, vietnamese_string_to_words, vietnamese_string_to_currency
+from .api import (
+    number_to_words,
+    number_to_currency,
+    vietnamese_string_to_words,
+    vietnamese_string_to_currency,
+)
 
 __all__ = [
     "DictionaryInterface",

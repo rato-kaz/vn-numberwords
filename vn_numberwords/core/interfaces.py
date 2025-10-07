@@ -51,5 +51,3 @@ class DictionaryInterface(ABC):
     @abstractmethod
     def get_exponent(self, power: int) -> str:
         pass
-
-

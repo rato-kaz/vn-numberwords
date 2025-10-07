@@ -11,5 +11,3 @@ __all__ = [
     "vietnamese_string_to_words",
     "vietnamese_string_to_currency",
 ]
-
-
