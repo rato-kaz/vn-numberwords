@@ -13,12 +13,12 @@ def test_number_to_words_basic():
 
 
 def test_number_to_words_south():
-    assert number_to_words(24, SouthDictionary()) == "hai mươi bốn"
+    assert number_to_words(24, SouthDictionary()) == "hai mươi tư"
 
 
 def test_currency_and_parse():
-    assert number_to_currency(1234, "đồng") == "một nghìn hai trăm ba mươi tư đồng"
-    assert vietnamese_string_to_words("1.234") == "một nghìn hai trăm ba mươi tư"
+    assert number_to_currency(1234, "đồng") == "một nghìn hai trăm ba mươi bốn đồng"
+    assert vietnamese_string_to_words("1.234") == "một nghìn hai trăm ba mươi bốn"
 
 
 def test_plain_integer_input():
