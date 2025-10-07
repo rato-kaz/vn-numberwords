@@ -8,18 +8,11 @@ Note:
 - The reusable library code has been moved to the package `vn_numberwords`.
 """
 
-from typing import Union, List
-
 # Public API is re-exported from the package to preserve compatibility
 from vn_numberwords import (
-    DictionaryInterface,
-    Dictionary,
     SouthDictionary,
     NumberTransformer,
     parse_vietnamese_number,
-    format_number_with_dots,
-    number_to_words,
-    number_to_currency,
     vietnamese_string_to_words,
     vietnamese_string_to_currency,
 )
