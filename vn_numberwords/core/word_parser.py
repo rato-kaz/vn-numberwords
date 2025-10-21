@@ -123,7 +123,7 @@ class WordToNumberParser:
             words = self._split_words(normalized_text)
 
         if not words:
-            raise ValueError("Empty input")
+            return 0
 
         # Check for negative
         is_negative = False
