@@ -45,7 +45,7 @@ class NumberTransformer:
 
         return is_negative, integer_part, decimal_part
 
-    def split_triplet(self, triplet: int) -> tuple[int, int, int]:
+    def split_triplet(self, triplet: int) -> tuple:
         hundred = (triplet // 100) % 10
         ten = (triplet // 10) % 10
         unit = triplet % 10
