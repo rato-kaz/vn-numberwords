@@ -7,7 +7,7 @@ name = "vn-numberwords"
 version = "0.2.0"
 description = "Convert numbers to Vietnamese words and Vietnamese words to numbers (with North/South variants)"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 license = { text = "MIT" }
 authors = [
   { name = "Nguyen Huu Vuong" }
