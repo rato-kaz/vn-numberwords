@@ -3,6 +3,7 @@
 from .core import (
     DictionaryInterface,
     NumberTransformer,
+    WordToNumberParser,
     parse_vietnamese_number,
     format_number_with_dots,
 )
@@ -12,6 +13,8 @@ from .api import (
     number_to_currency,
     vietnamese_string_to_words,
     vietnamese_string_to_currency,
+    words_to_number,
+    currency_words_to_number,
 )
 
 __all__ = [
@@ -19,13 +22,16 @@ __all__ = [
     "Dictionary",
     "SouthDictionary",
     "NumberTransformer",
+    "WordToNumberParser",
     "parse_vietnamese_number",
     "format_number_with_dots",
     "number_to_words",
     "number_to_currency",
     "vietnamese_string_to_words",
     "vietnamese_string_to_currency",
+    "words_to_number",
+    "currency_words_to_number",
     "__version__",
 ]
 
-__version__ = "0.1.0"
+__version__ = "0.2.0"
