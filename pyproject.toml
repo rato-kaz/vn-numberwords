@@ -4,8 +4,8 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "vn-numberwords"
-version = "0.1.0"
-description = "Convert numbers to Vietnamese words (with North/South variants)"
+version = "0.2.0"
+description = "Convert numbers to Vietnamese words and Vietnamese words to numbers (with North/South variants)"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
@@ -21,8 +21,8 @@ classifiers = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/your-github-username/vn-numberwords"
-Repository = "https://github.com/your-github-username/vn-numberwords"
+Homepage = "https://github.com/rato-kaz/vn-numberwords"
+Repository = "https://github.com/rato-kaz/vn-numberwords"
 
 [tool.setuptools.packages.find]
 where = ["."]
