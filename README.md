@@ -5,7 +5,7 @@ Convert numbers to Vietnamese words and Vietnamese words to numbers (supports No
 ## Install (from source)
 
 ```bash
-pip install -e .
+pip install vn-numberwords
 ```
 
 ## Usage
