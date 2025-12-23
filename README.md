@@ -1,8 +1,13 @@
 # vn-numberwords
 
+[![PyPI version](https://badge.fury.io/py/vn-numberwords.svg)](https://badge.fury.io/py/vn-numberwords)
+[![Python versions](https://img.shields.io/pypi/pyversions/vn-numberwords.svg)](https://pypi.org/project/vn-numberwords/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![CI](https://github.com/rato-kaz/vn-numberwords/actions/workflows/ci.yml/badge.svg)](https://github.com/rato-kaz/vn-numberwords/actions/workflows/ci.yml)
+
 Convert numbers to Vietnamese words and Vietnamese words to numbers (supports Northern and Southern variants).
 
-## Install (from source)
+## Installation
 
 ```bash
 pip install vn-numberwords
