@@ -16,6 +16,12 @@ from .api import (
     words_to_number,
     currency_words_to_number,
 )
+from .exceptions import (
+    VnNumberWordsError,
+    InvalidNumberError,
+    InvalidWordsError,
+    DictionaryError,
+)
 
 __all__ = [
     "DictionaryInterface",
@@ -31,6 +37,10 @@ __all__ = [
     "vietnamese_string_to_currency",
     "words_to_number",
     "currency_words_to_number",
+    "VnNumberWordsError",
+    "InvalidNumberError",
+    "InvalidWordsError",
+    "DictionaryError",
     "__version__",
 ]
 
