@@ -165,5 +165,7 @@ class Dictionary(DictionaryInterface):
             DictionaryError: If power is not supported in Vietnamese dictionary.
         """
         if not (0 <= power < len(self.EXPONENTS)):
-            raise DictionaryError(f"Power arg ({power}) not exist in vietnamese dictionary!")
+            raise DictionaryError(
+                f"Power arg ({power}) not exist in vietnamese dictionary!"
+            )
         return self.EXPONENTS[power]

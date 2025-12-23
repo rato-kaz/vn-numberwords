@@ -10,7 +10,7 @@ def test_decimal_numbers():
     assert number_to_words(1.5) == "một phẩy năm"
     assert number_to_words(0.5) == "không phẩy năm"
     assert number_to_words(10.25) == "mười phẩy hai mươi lăm"
-    
+
     # More complex decimals
     assert number_to_words(123.45) == "một trăm hai mươi ba phẩy bốn mươi lăm"
     assert number_to_words(999.99) == "chín trăm chín mươi chín phẩy chín mươi chín"
@@ -23,7 +23,7 @@ def test_negative_numbers():
     assert number_to_words(-21) == "âm hai mươi mốt"
     assert number_to_words(-123) == "âm một trăm hai mươi ba"
     assert number_to_words(-1000) == "âm một nghìn"
-    
+
     # Negative decimals
     assert number_to_words(-1.5) == "âm một phẩy năm"
     assert number_to_words(-123.45) == "âm một trăm hai mươi ba phẩy bốn mươi lăm"
@@ -34,18 +34,21 @@ def test_large_numbers():
     # Thousands
     assert "nghìn" in number_to_words(1000)
     assert "nghìn" in number_to_words(123000)
-    
+
     # Millions
     assert "triệu" in number_to_words(1000000)
     assert "triệu" in number_to_words(5000000)
-    
+
     # Billions
     assert "tỷ" in number_to_words(1000000000)
     assert "tỷ" in number_to_words(1000000000000)
-    
+
     # Very large number
     assert number_to_words(1000000000000) == "một nghìn tỷ"
-    assert number_to_words(1234567890) == "một tỷ hai trăm ba mươi bốn triệu năm trăm sáu mươi bảy nghìn tám trăm chín mươi"
+    assert (
+        number_to_words(1234567890)
+        == "một tỷ hai trăm ba mươi bốn triệu năm trăm sáu mươi bảy nghìn tám trăm chín mươi"
+    )
 
 
 def test_edge_cases():
@@ -53,21 +56,21 @@ def test_edge_cases():
     # Zero
     assert number_to_words(0) == "không"
     assert number_to_words(0.0) == "không"
-    
+
     # Ten
     assert number_to_words(10) == "mười"
-    
+
     # Hundred
     assert number_to_words(100) == "một trăm"
-    
+
     # Thousand
     assert number_to_words(1000) == "một nghìn"
-    
+
     # Numbers with zeros in middle
     assert number_to_words(101) == "một trăm linh một"
     assert number_to_words(1001) == "một nghìn không trăm linh một"
     assert number_to_words(1010) == "một nghìn không trăm mười"
-    
+
     # Numbers ending in special digits
     assert number_to_words(15) == "mười lăm"
     assert number_to_words(25) == "hai mươi lăm"
@@ -87,10 +90,10 @@ def test_invalid_input():
     """Test invalid input handling"""
     with pytest.raises(InvalidNumberError):
         number_to_words("abc")
-    
+
     with pytest.raises(InvalidNumberError):
         number_to_words("12abc")
-    
+
     with pytest.raises(InvalidNumberError):
         number_to_words(None)
 
@@ -100,7 +103,7 @@ def test_decimal_precision():
     # Single decimal place
     assert number_to_words(1.1) == "một phẩy một"
     assert number_to_words(5.9) == "năm phẩy chín"
-    
+
     # Multiple decimal places (natural representation)
     assert number_to_words(1.25) == "một phẩy hai mươi lăm"
     assert number_to_words(3.14) == "ba phẩy mười bốn"
